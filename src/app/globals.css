@@ -33,3 +33,50 @@ body {
     transparent 2px 8px
   );
 }
+
+.escalator-track {
+  transform: none;
+  transform-origin: center;
+}
+
+.escalator-step {
+  transform: none;
+}
+
+.escalator-shell::before {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border-radius: 2px;
+  pointer-events: none;
+  opacity: 0.24;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.3) 0 12px,
+    rgba(10, 37, 64, 0.25) 12px 24px
+  );
+  animation: belt-slide 1.6s linear infinite;
+}
+
+.escalator-motion {
+  animation: escalator-float 2.2s ease-in-out infinite;
+}
+
+@keyframes belt-slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-24px);
+  }
+}
+
+@keyframes escalator-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}

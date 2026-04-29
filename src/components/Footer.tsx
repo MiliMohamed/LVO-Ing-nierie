@@ -14,6 +14,11 @@ export function Footer() {
           <Link href="/" className="block hover:text-accent">Accueil</Link>
           <Link href="/services" className="block hover:text-accent">Services</Link>
           <Link href="/realisations" className="block hover:text-accent">Réalisations</Link>
+          <Link href="/automatisations" className="block hover:text-accent">Automatisations</Link>
+          <Link href="/kpi" className="block hover:text-accent">KPI Dashboard</Link>
+          <Link href="/monitoring" className="block hover:text-accent">Monitoring capteurs</Link>
+          <Link href="/chatbot" className="block hover:text-accent">Chatbot client</Link>
+          <Link href="/espace-client" className="block hover:text-accent">Espace Client</Link>
           <Link href="/contact" className="block hover:text-accent">Contact</Link>
         </div>
         <div className="space-y-2 text-sm">

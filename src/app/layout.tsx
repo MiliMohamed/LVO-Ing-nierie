@@ -3,6 +3,7 @@ import { Raleway, Source_Sans_3 } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { ModuleSidebar } from "@/components/ModuleSidebar";
 
 const sourceSans = Source_Sans_3({
   variable: "--font-source-sans-pro",
@@ -42,7 +43,10 @@ export default function RootLayout({
     >
       <body className="min-h-full technical-grid">
         <Navbar />
-        <main>{children}</main>
+        <div className="mx-auto flex w-full max-w-[1400px]">
+          <ModuleSidebar />
+          <main className="min-w-0 flex-1">{children}</main>
+        </div>
         <Footer />
       </body>
     </html>

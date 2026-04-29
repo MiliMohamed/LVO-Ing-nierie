@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { useMemo, useState } from "react";
+import { useState } from "react";
+import { motion } from "framer-motion";
 import { ProjectCard } from "@/components/ProjectCard";
 
 const carouselImages = [
@@ -37,7 +38,7 @@ const projectThumbnails = [
 
 export default function RealisationsPage() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const activeImage = useMemo(() => carouselImages[activeIndex], [activeIndex]);
+  const activeImage = carouselImages[activeIndex];
 
   const goPrev = () => {
     setActiveIndex((prev) => (prev === 0 ? carouselImages.length - 1 : prev - 1));
@@ -48,13 +49,16 @@ export default function RealisationsPage() {
   };
 
   return (
-    <section className="mx-auto max-w-6xl px-4 py-16">
-      <h1 className="font-heading text-4xl font-extrabold text-primary">Nos Réalisations</h1>
-      <p className="mt-3 max-w-3xl text-dark/80">
+    <section className="mx-auto max-w-6xl px-4 py-16 md:py-20">
+      <div className="inline-flex items-center rounded-full border border-accent/25 bg-accent/10 px-4 py-1 text-xs font-bold uppercase tracking-[0.2em] text-accent">
+        Projets signés LVO
+      </div>
+      <h1 className="mt-4 font-heading text-4xl font-extrabold tracking-tight text-primary md:text-5xl">Nos Réalisations</h1>
+      <p className="mt-4 max-w-3xl text-base leading-7 text-dark/80">
         Des références terrain mêlant ingénierie verticale, modernisation d&apos;équipements et accompagnement de projets résidentiels.
       </p>
 
-      <div className="mt-8 overflow-hidden rounded-sm border border-neutral/50 bg-white shadow-lg">
+      <div className="mt-10 overflow-hidden rounded-2xl border border-neutral/40 bg-white/95 shadow-xl shadow-primary/10">
         <div className="relative">
           <Image
             src={activeImage.src}
@@ -64,14 +68,14 @@ export default function RealisationsPage() {
             className="h-[340px] w-full object-cover md:h-[420px]"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-primary/70 to-transparent" />
-          <span className="absolute bottom-4 left-4 rounded-sm bg-primary/85 px-3 py-1 text-xs font-bold tracking-wide text-white">
+          <div className="absolute inset-0 bg-gradient-to-t from-primary/75 via-primary/20 to-transparent" />
+          <span className="absolute bottom-5 left-5 rounded-full border border-white/35 bg-accent/95 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.14em] text-white shadow-lg">
             {activeImage.label}
           </span>
           <button
             type="button"
             onClick={goPrev}
-            className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-white/90 p-2 text-primary shadow hover:bg-white"
+            className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full border border-white/30 bg-white/90 p-2.5 text-primary shadow-lg transition hover:scale-105 hover:bg-white"
             aria-label="Image précédente"
           >
             ←
@@ -79,30 +83,32 @@ export default function RealisationsPage() {
           <button
             type="button"
             onClick={goNext}
-            className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-white/90 p-2 text-primary shadow hover:bg-white"
+            className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full border border-white/30 bg-white/90 p-2.5 text-primary shadow-lg transition hover:scale-105 hover:bg-white"
             aria-label="Image suivante"
           >
             →
           </button>
         </div>
-        <div className="grid grid-cols-2 gap-2 p-3 sm:grid-cols-4">
+        <div className="grid grid-cols-2 gap-3 bg-neutral/10 p-4 sm:grid-cols-4">
           {carouselImages.map((item, index) => (
-            <button
+            <motion.button
               key={item.src}
               type="button"
               onClick={() => setActiveIndex(index)}
               className={`overflow-hidden rounded-sm border ${
-                activeIndex === index ? "border-accent" : "border-transparent"
+                activeIndex === index ? "border-accent shadow-md shadow-accent/30" : "border-transparent"
               }`}
               aria-label={`Afficher ${item.label}`}
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.98 }}
             >
-              <Image src={item.src} alt={item.alt} width={320} height={180} className="h-20 w-full object-cover" />
-            </button>
+              <Image src={item.src} alt={item.alt} width={360} height={220} className="h-24 w-full object-cover transition duration-300 hover:brightness-105" />
+            </motion.button>
           ))}
         </div>
       </div>
 
-      <div className="mt-8">
+      <div className="mt-10">
         <ProjectCard
           image="/image_1_1_top_left.png"
           title="PROJET: VILLA SOPHIA"
@@ -111,9 +117,17 @@ export default function RealisationsPage() {
         />
       </div>
 
-      <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {projectThumbnails.map((thumb) => (
-          <Image key={thumb.src} src={thumb.src} alt={thumb.alt} width={280} height={180} className="h-36 w-full rounded-sm object-cover" />
+          <motion.div key={thumb.src} whileHover={{ y: -6 }}>
+            <Image
+              src={thumb.src}
+              alt={thumb.alt}
+              width={380}
+              height={240}
+              className="h-44 w-full rounded-xl border border-neutral/40 object-cover shadow-lg shadow-primary/10 transition duration-300 hover:shadow-xl"
+            />
+          </motion.div>
         ))}
       </div>
     </section>
