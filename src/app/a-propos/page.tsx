@@ -138,7 +138,6 @@ export default function AboutPage() {
         </article>
         <div className="grid gap-4">
           <Image src="/images/lvo/image_1.png" alt="LVO ingénierie visuel équipe" width={900} height={520} className="rounded-2xl border border-neutral/30 object-cover" />
-          <Image src="/images/lvo/image_6.png" alt="Diagnostic technique ascenseur" width={900} height={440} className="rounded-2xl border border-neutral/30 object-cover" />
         </div>
       </div>
 
