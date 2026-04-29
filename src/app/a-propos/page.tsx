@@ -1,18 +1,21 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { HoverWordText } from "@/components/HoverWordText";
 import { Reveal } from "@/components/Reveal";
 
 const contextPoints = ["Vieillissement de la population", "Insularité du territoire", "Bâtiments de plus en plus élevés", "Contraintes climatiques", "Exigence accrue des usagers"];
 
 const values = ["Indépendance", "Impartialité", "Engagement", "Rigueur", "Conseil"];
 
+
+
 const keyMissions = [
   "Conception en neuf/réhabilitation avec solutions adaptées au site",
   "Études de trafic avancées avec ADSimulo et ADVisuo",
-  "Création d&apos;ascenseurs dans l&apos;existant (études de faisabilité)",
+  "Création d'ascenseurs dans l'existant (études de faisabilité)",
   "Audit et diagnostic technique des équipements existants",
-  "Maîtrise d&apos;oeuvre complète: études, suivi, réception",
-  "Assistance à maîtrise d&apos;ouvrage et pilotage maintenance",
+  "Maîtrise d'oeuvre complète: études, suivi, réception",
+  "Assistance à maîtrise d'ouvrage et pilotage maintenance",
 ];
 
 const resources = [
@@ -26,10 +29,10 @@ const resources = [
 
 const career = [
   "2009-2010: HISPANO-SUIZA - Dessinateur projeteur (alternance)",
-  "2010-2011: NEW-MAT - Ingénieur d&apos;affaire robotique (alternance)",
+  "2010-2011: NEW-MAT - Ingénieur d'affaire robotique (alternance)",
   "2011-2015: ATS-KONE - Ingénieur technico-commercial",
   "2015-2018: MISTRAL - Responsable création ascenseurs sur mesure",
-  "2018-2019: CASTE.ING - Ingénieur chargé d&apos;affaires ascenseurs",
+  "2018-2019: CASTE.ING - Ingénieur chargé d'affaires ascenseurs",
   "2019-2026: MOVVEO - Ingénieur conseil associé",
   "2026: Création de LVO-Ingénierie - Gérant fondateur",
 ];
@@ -63,40 +66,75 @@ const projects = [
 const worksRefs = [
   {
     ref: "CHU La Réunion",
-    client: "M. Nicolas - Chargé opérations - 02 62 90 61 89",
-    operation: "Remplacement complet 24 ascenseurs, 3 monte-charges + modernisation 2 ascenseurs (dont un hélistation)",
+    operation:
+      "Remplacement complet de 24 ascenseurs et 3 monte-charges et modernisation de 2 ascenseurs dont un hélistation",
+    client: "M. NICOLAS, Chargé opérations, 02 62 90 61 89",
+    workType: "Réhabilitation / remplacement / modernisation",
     mission: "MOE",
-    amount: "5 580 000 EUR HT",
+    amount: "5 580 000 € HT",
   },
   {
     ref: "Aéroport La Réunion",
-    client: "M. Pibroc - Responsable technique - 06 92 70 25 95",
-    operation: "Remplacement d&apos;un monte-charges Duty Free",
+    operation: "Remplacement d'un monte-charges Duty Free",
+    client: "M. PIBROC, Responsable technique, 06 92 70 25 95",
+    workType: "Réhabilitation / remplacement",
     mission: "MOE",
-    amount: "74 000 EUR HT",
+    amount: "74 000 € HT",
   },
   {
     ref: "Hôtel NOVOTEL Tour Eiffel",
-    client: "M. Hamdani - Directeur technique - 06 24 27 32 95",
     operation: "Modernisation de 6 ascenseurs avec mise en place prédestination",
+    client: "M. HAMDANI, Directeur technique, 06 24 27 32 95",
+    workType: "Réhabilitation / modernisation",
     mission: "MOE",
-    amount: "3 200 000 EUR HT",
+    amount: "3 200 000 € HT",
   },
   {
     ref: "SIDR",
-    client: "M. Prigent - Directeur technique - 02 62 94 74 35",
     operation: "Remplacement complet de 4 ascenseurs",
+    client: "M. PRIGENT, Directeur technique, 02 62 94 74 35",
+    workType: "Réhabilitation / remplacement",
     mission: "MOE",
-    amount: "296 000 EUR HT",
+    amount: "296 000 € HT",
   },
 ];
 
 const maintenanceRefs = [
-  "Regroupement SIDR-CDC-SODIAC-SEMADER: suivi maintenance 260 ascenseurs (AMO)",
-  "CHU La Réunion: suivi maintenance 34 ascenseurs (AMO)",
-  "Aéroport La Réunion: suivi maintenance 15 ascenseurs, 4 monte-charges, 10 escalators (AMO)",
-  "GHER: suivi maintenance 10 ascenseurs (AMO)",
-  "Bureaux des collines: suivi maintenance 43 ascenseurs (AMO)",
+  {
+    ref: "Regroupement : SIDR-CDC-SODIAC-SEMADER",
+    operation: "Suivi de maintenance 260 ascenseurs",
+    client: "M. PRIGENT, Directeur technique, 02 62 94 74 35",
+    workType: "Maintenance",
+    mission: "AMO",
+  },
+  {
+    ref: "CHU La Réunion",
+    operation: "Suivi de maintenance 34 ascenseurs",
+    client: "M. LAHIRE, Responsable ascenseurs, 02 62 90 59 82",
+    workType: "Maintenance",
+    mission: "AMO",
+  },
+  {
+    ref: "Aéroport La Réunion",
+    operation: "Suivi de maintenance 15 ascenseurs, 4 monte-charges, 10 escalators",
+    client: "M. SAINT-FIRMIN, Responsable maintenance, 02 62 48 81 50",
+    workType: "Maintenance",
+    mission: "AMO",
+  },
+  {
+    ref: "GHER",
+    operation: "Suivi de maintenance 10 ascenseurs",
+    client: "M. HAYANO, Responsable technique, 02 98 84 42",
+    workType: "Maintenance",
+    mission: "AMO",
+  },
+  {
+    ref: "Bureaux des collines",
+    operation: "Suivi de maintenance 43 ascenseurs",
+    client: "M. DELAVAULT, Responsable technique, 06 78 71 42 33",
+    workType: "Maintenance",
+    mission: "AMO",
+  },
 ];
 
 export const metadata: Metadata = {
@@ -236,26 +274,42 @@ export default function AboutPage() {
       </div>
 
       <div className="mt-8 rounded-2xl border border-neutral/40 bg-white p-6 shadow-md shadow-primary/5">
-        <h2 className="font-heading text-2xl font-extrabold text-primary">Références suivies travaux</h2>
+        <h2 className="font-heading text-2xl font-extrabold text-primary">Quelques références suivies travaux</h2>
         <div className="mt-4 overflow-x-auto">
           <table className="w-full border border-neutral/30 text-sm">
             <thead className="bg-primary text-white">
               <tr>
-                <th className="p-3">Projet</th>
-                <th className="p-3">Opération</th>
-                <th className="p-3">Client</th>
-                <th className="p-3">Mission</th>
-                <th className="p-3">Montant</th>
+                <th className="p-3">N°</th>
+                <th className="p-3">Réf.</th>
+                <th className="p-3">Nature de l&apos;opération</th>
+                <th className="p-3">Maître d&apos;ouvrage</th>
+                <th className="p-3">Type de travaux</th>
+                <th className="p-3">Type de mission</th>
+                <th className="p-3">Montant des travaux</th>
               </tr>
             </thead>
             <tbody className="bg-white">
-              {worksRefs.map((row) => (
+              {worksRefs.map((row, index) => (
                 <tr key={row.ref} className="border-t border-neutral/20">
-                  <td className="p-3 font-bold">{row.ref}</td>
-                  <td className="p-3">{row.operation}</td>
-                  <td className="p-3">{row.client}</td>
-                  <td className="p-3">{row.mission}</td>
-                  <td className="p-3">{row.amount}</td>
+                  <td className="p-3 font-bold text-primary">{index + 1}</td>
+                  <td className="p-3 font-bold">
+                    <HoverWordText text={row.ref} />
+                  </td>
+                  <td className="p-3">
+                    <HoverWordText text={row.operation} />
+                  </td>
+                  <td className="p-3">
+                    <HoverWordText text={row.client} />
+                  </td>
+                  <td className="p-3">
+                    <HoverWordText text={row.workType} />
+                  </td>
+                  <td className="p-3">
+                    <HoverWordText text={row.mission} />
+                  </td>
+                  <td className="p-3">
+                    <HoverWordText text={row.amount} />
+                  </td>
                 </tr>
               ))}
             </tbody>
@@ -263,15 +317,44 @@ export default function AboutPage() {
         </div>
       </div>
 
-      <div className="mt-8 rounded-2xl border border-primary/15 bg-primary p-6 text-white shadow-xl shadow-primary/20">
-        <h2 className="font-heading text-2xl font-extrabold text-accent">Références suivies de maintenance</h2>
-        <ul className="mt-4 space-y-2 text-sm text-white/90">
-          {maintenanceRefs.map((item) => (
-            <li key={item} className="rounded-xl bg-white/10 p-3">
-              {item}
-            </li>
-          ))}
-        </ul>
+      <div className="mt-8 rounded-2xl border border-neutral/40 bg-white p-6 shadow-md shadow-primary/5">
+        <h2 className="font-heading text-2xl font-extrabold text-primary">Quelques références suivies de maintenance</h2>
+        <div className="mt-4 overflow-x-auto">
+          <table className="w-full border border-neutral/30 text-sm">
+            <thead className="bg-primary text-white">
+              <tr>
+                <th className="p-3">N°</th>
+                <th className="p-3">Réf.</th>
+                <th className="p-3">Nature de l&apos;opération</th>
+                <th className="p-3">Maître d&apos;ouvrage</th>
+                <th className="p-3">Type de travaux</th>
+                <th className="p-3">Type de mission</th>
+              </tr>
+            </thead>
+            <tbody className="bg-white">
+              {maintenanceRefs.map((row, index) => (
+                <tr key={`${row.ref}-${index}`} className="border-t border-neutral/20">
+                  <td className="p-3 font-bold text-primary">{index + 1}</td>
+                  <td className="p-3 font-bold">
+                    <HoverWordText text={row.ref} />
+                  </td>
+                  <td className="p-3">
+                    <HoverWordText text={row.operation} />
+                  </td>
+                  <td className="p-3">
+                    <HoverWordText text={row.client} />
+                  </td>
+                  <td className="p-3">
+                    <HoverWordText text={row.workType} />
+                  </td>
+                  <td className="p-3">
+                    <HoverWordText text={row.mission} />
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </section>
   );
