@@ -44,7 +44,7 @@ export default function AutomatisationsPage() {
         {automationFlows.map((flow, index) => (
           <Reveal key={flow.title} delay={index * 0.08}>
             <article className="rounded-2xl border border-neutral/40 bg-white p-6 shadow-md shadow-primary/5 transition hover:-translate-y-1 hover:shadow-lg">
-              <p className="text-xs font-bold uppercase tracking-[0.14em] text-accent">Cas d'usage</p>
+              <p className="text-xs font-bold uppercase tracking-[0.14em] text-accent">Cas d&apos;usage</p>
               <h2 className="mt-3 font-heading text-xl font-extrabold text-primary">{flow.title}</h2>
               <p className="mt-3 text-sm leading-6 text-dark/85">{flow.detail}</p>
               <p className="mt-4 inline-flex rounded-full bg-primary px-3 py-1 text-xs font-bold text-white">{flow.gain}</p>
@@ -64,7 +64,7 @@ export default function AutomatisationsPage() {
               VOIR LE DASHBOARD KPI
             </Link>
             <Link href="/espace-client" className="rounded-full border border-white/30 px-5 py-2 text-xs font-bold tracking-wide text-white transition hover:bg-white/10">
-              OUVRIR L'ESPACE CLIENT
+              OUVRIR L&apos;ESPACE CLIENT
             </Link>
           </div>
         </div>

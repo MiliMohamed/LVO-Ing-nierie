@@ -28,7 +28,7 @@ export default function EspaceClientPage() {
         </div>
         <h1 className="mt-4 font-heading text-4xl font-extrabold tracking-tight text-primary md:text-5xl">Espace Fichiers & Devis</h1>
         <p className="mt-4 max-w-3xl text-base leading-7 text-dark/80">
-          Gérez vos documents par projet, créez des liens sécurisés pour vos clients et suivez les dates d'expiration en un coup d'oeil.
+          Gérez vos documents par projet, créez des liens sécurisés pour vos clients et suivez les dates d&apos;expiration en un coup d&apos;oeil.
         </p>
       </Reveal>
 
