@@ -17,7 +17,7 @@ export default function ServicesPage() {
       <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {services.map((service, index) => (
           <Reveal key={service.title} delay={index * 0.06}>
-            <ServiceCard title={service.title} description={service.description} />
+            <ServiceCard title={service.title} description={service.description} details={service.details} />
           </Reveal>
         ))}
       </div>

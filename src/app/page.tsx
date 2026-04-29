@@ -10,6 +10,50 @@ export const metadata: Metadata = {
   description: "L'ingénierie verticale réinventée pour vos projets d'ascenseurs, convoyeurs et escaliers mécaniques.",
 };
 
+const trustPoints = [
+  "Méthodologie conforme normes FR/EU",
+  "Pilotage qualité - coût - délai",
+  "Outils digitaux pour traçabilité complète",
+  "Support réactif et accompagnement continu",
+];
+
+const companyOverview = [
+  { label: "Secteur", value: "Services d'ingénierie" },
+  { label: "Taille de l'entreprise", value: "2-10 employés" },
+  { label: "Fondée en", value: "2026" },
+  { label: "Téléphone", value: "0692053952" },
+];
+
+const steps = [
+  {
+    title: "1. Cadrage",
+    description: "Collecte des besoins, visite site, définition du périmètre technique et réglementaire.",
+  },
+  {
+    title: "2. Conception",
+    description: "Production des pièces techniques (audit, CCTP, DPGF) avec validation des options.",
+  },
+  {
+    title: "3. Exécution",
+    description: "Suivi chantier, reporting KPI, gestion des réserves et sécurisation de la réception finale.",
+  },
+];
+
+const faqs = [
+  {
+    question: "Intervenez-vous uniquement à La Réunion ?",
+    answer: "La Réunion est la zone principale, avec possibilité d'accompagnement à distance sur d'autres territoires.",
+  },
+  {
+    question: "Quel est le délai moyen pour un audit complet ?",
+    answer: "Selon la taille du site, un audit est généralement livré entre 5 et 10 jours ouvrés.",
+  },
+  {
+    question: "Pouvez-vous reprendre un projet déjà engagé ?",
+    answer: "Oui, nous pouvons reprendre un dossier en cours avec phase de diagnostic et plan de reprise.",
+  },
+];
+
 export default function Home() {
   return (
     <div>
@@ -97,14 +141,94 @@ export default function Home() {
         </div>
         <div className="grid gap-6 md:grid-cols-3">
           {[
-            { title: "AUDIT", description: services[0].description },
-            { title: "MOE", description: services[1].description },
-            { title: "PROJETS", description: services[2].description },
+            { title: "AUDIT", description: services[0].description, details: services[0].details },
+            { title: "MOE", description: services[1].description, details: services[1].details },
+            { title: "PROJETS", description: services[2].description, details: services[2].details },
           ].map((service, index) => (
             <Reveal key={service.title} delay={index * 0.08}>
-              <ServiceCard title={service.title} description={service.description} />
+              <ServiceCard title={service.title} description={service.description} details={service.details} />
             </Reveal>
           ))}
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-4 pb-8">
+        <div className="rounded-2xl border border-neutral/40 bg-white p-6 shadow-md shadow-primary/5 md:p-8">
+          <p className="text-xs font-bold uppercase tracking-[0.16em] text-accent">Présentation de l'entreprise</p>
+          <h2 className="mt-3 font-heading text-3xl font-extrabold tracking-tight text-primary">Vue d&apos;ensemble LVO-Ingénierie</h2>
+          <p className="mt-3 max-w-4xl text-sm leading-7 text-dark/80">
+            Bureau d&apos;études spécialisé en ascenseurs et escaliers mécaniques, LVO-Ingénierie accompagne les maîtres
+            d&apos;ouvrage avec une approche technique, réglementaire et opérationnelle.
+          </p>
+          <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {companyOverview.map((item) => (
+              <article key={item.label} className="rounded-xl border border-neutral/30 bg-neutral/5 p-4">
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-dark/60">{item.label}</p>
+                <p className="mt-2 text-sm font-bold text-primary">{item.value}</p>
+              </article>
+            ))}
+          </div>
+          <p className="mt-4 text-xs text-dark/60">
+            Réseau LinkedIn actuel: 1 membre associé ayant indiqué LVO-Ingénierie comme entreprise.
+          </p>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-4 pb-8">
+        <div className="rounded-2xl border border-neutral/40 bg-white p-6 shadow-md shadow-primary/5 md:p-8">
+          <p className="text-xs font-bold uppercase tracking-[0.16em] text-accent">Pourquoi LVO</p>
+          <div className="mt-4 grid gap-3 md:grid-cols-2">
+            {trustPoints.map((point) => (
+              <div key={point} className="flex items-start gap-3 rounded-xl bg-neutral/5 p-3">
+                <span className="mt-1 h-2 w-2 rounded-full bg-accent" />
+                <p className="text-sm font-semibold text-primary">{point}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-4 py-12 md:py-16">
+        <h2 className="font-heading text-3xl font-extrabold tracking-tight text-primary">Notre méthode en 3 étapes</h2>
+        <div className="mt-6 grid gap-4 md:grid-cols-3">
+          {steps.map((step) => (
+            <article key={step.title} className="rounded-2xl border border-neutral/40 bg-white p-5 shadow-md shadow-primary/5">
+              <h3 className="font-heading text-xl font-extrabold text-primary">{step.title}</h3>
+              <p className="mt-3 text-sm leading-6 text-dark/80">{step.description}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-4 pb-14">
+        <div className="grid gap-6 rounded-2xl border border-primary/15 bg-primary p-7 text-white shadow-xl shadow-primary/20 md:grid-cols-2">
+          <div>
+            <h2 className="font-heading text-3xl font-extrabold text-accent">FAQ rapide</h2>
+            <div className="mt-4 space-y-3">
+              {faqs.map((faq) => (
+                <div key={faq.question} className="rounded-xl border border-white/20 bg-white/10 p-4">
+                  <p className="text-sm font-bold">{faq.question}</p>
+                  <p className="mt-2 text-sm text-white/85">{faq.answer}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="flex flex-col justify-between rounded-xl border border-white/20 bg-white/10 p-5">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.14em] text-neutral">Prêt à lancer votre projet ?</p>
+              <p className="mt-3 text-sm leading-6 text-white/90">
+                Réservez un échange technique de 30 minutes pour cadrer vos objectifs, vos contraintes et votre planning.
+              </p>
+            </div>
+            <div className="mt-5 flex flex-wrap gap-3">
+              <Link href="/contact" className="rounded-full bg-accent px-5 py-2 text-xs font-bold tracking-wide text-white transition hover:bg-white hover:text-primary">
+                PLANIFIER UN APPEL
+              </Link>
+              <Link href="/realisations" className="rounded-full border border-white/35 px-5 py-2 text-xs font-bold tracking-wide text-white transition hover:bg-white/10">
+                VOIR LES RÉALISATIONS
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
     </div>

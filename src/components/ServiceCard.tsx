@@ -3,9 +3,10 @@ import Link from "next/link";
 type ServiceCardProps = {
   title: string;
   description: string;
+  details?: string[];
 };
 
-export function ServiceCard({ title, description }: Readonly<ServiceCardProps>) {
+export function ServiceCard({ title, description, details = [] }: Readonly<ServiceCardProps>) {
   return (
     <article className="group relative overflow-hidden rounded-2xl border border-neutral/50 bg-white/90 p-6 shadow-md shadow-primary/5 backdrop-blur-sm transition duration-300 hover:-translate-y-1.5 hover:border-accent/40 hover:shadow-xl hover:shadow-primary/10">
       <div
@@ -26,6 +27,16 @@ export function ServiceCard({ title, description }: Readonly<ServiceCardProps>) 
       </div>
       <h3 className="relative font-heading text-xl font-extrabold tracking-tight text-primary">{title}</h3>
       <p className="relative mt-3 text-sm leading-7 text-dark/85">{description}</p>
+      {details.length > 0 && (
+        <ul className="relative mt-4 space-y-1.5 text-xs font-medium text-dark/80">
+          {details.slice(0, 3).map((item) => (
+            <li key={item} className="flex items-start gap-2">
+              <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-accent" />
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      )}
       <Link
         href="/contact"
         className="relative mt-5 inline-flex items-center gap-2 text-sm font-semibold tracking-wide text-accent transition group-hover:gap-3 group-hover:text-primary"
