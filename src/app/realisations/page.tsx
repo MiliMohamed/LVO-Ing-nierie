@@ -24,27 +24,8 @@ const carouselImages = [
     src: "/image_1_4_bottom_right.png",
     alt: "Exécution chantier",
     label: "Modernisation",
-  },
-  {
-    src: "/image_2_1_top_left.png",
-    alt: "Suivi opérationnel projet",
-    label: "Pilotage",
-  },
-  {
-    src: "/image_2_2_top_right.png",
-    alt: "Conception et audit",
-    label: "Audit",
-  },
-  {
-    src: "/image_2_3_bottom_left.png",
-    alt: "Coordination maîtrise d'oeuvre",
-    label: "Maîtrise d'oeuvre",
-  },
-  {
-    src: "/image_2_4_bottom_right.png",
-    alt: "Livraison de projet",
-    label: "Livraison",
-  },
+  }
+  
 ];
 
 const projectThumbnails = [
