@@ -7,6 +7,7 @@ import { LogoLVO } from "./LogoLVO";
 
 const links = [
   { href: "/", label: "ACCUEIL" },
+  { href: "/a-propos", label: "À PROPOS" },
   { href: "/services", label: "SERVICES" },
   { href: "/realisations", label: "PROJETS" },
   { href: "/contact", label: "CONTACT" },

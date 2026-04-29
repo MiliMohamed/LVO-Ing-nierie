@@ -12,6 +12,7 @@ export function Footer() {
         <div className="space-y-2 text-sm">
           <p className="font-heading text-lg font-bold">Navigation</p>
           <Link href="/" className="block hover:text-accent">Accueil</Link>
+          <Link href="/a-propos" className="block hover:text-accent">À propos</Link>
           <Link href="/services" className="block hover:text-accent">Services</Link>
           <Link href="/realisations" className="block hover:text-accent">Réalisations</Link>
           <Link href="/automatisations" className="block hover:text-accent">Automatisations</Link>
@@ -24,7 +25,7 @@ export function Footer() {
         <div className="space-y-2 text-sm">
           <p className="font-heading text-lg font-bold">Coordonnées</p>
           <p>Saint-Denis, La Réunion</p>
-          <p>022 235 773 80</p>
+          <p>0692053952</p>
           <p>contact@lvo-ingenierie.com</p>
         </div>
       </div>
