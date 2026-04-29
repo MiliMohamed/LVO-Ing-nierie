@@ -154,7 +154,7 @@ export default function Home() {
 
       <section className="mx-auto max-w-6xl px-4 pb-8">
         <div className="rounded-2xl border border-neutral/40 bg-white p-6 shadow-md shadow-primary/5 md:p-8">
-          <p className="text-xs font-bold uppercase tracking-[0.16em] text-accent">Présentation de l'entreprise</p>
+          <p className="text-xs font-bold uppercase tracking-[0.16em] text-accent">Présentation de l&apos;entreprise</p>
           <h2 className="mt-3 font-heading text-3xl font-extrabold tracking-tight text-primary">Vue d&apos;ensemble LVO-Ingénierie</h2>
           <p className="mt-3 max-w-4xl text-sm leading-7 text-dark/80">
             Bureau d&apos;études spécialisé en ascenseurs et escaliers mécaniques, LVO-Ingénierie accompagne les maîtres
