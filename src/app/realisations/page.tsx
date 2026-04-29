@@ -1,38 +1,57 @@
 "use client";
 
-import type { Metadata } from "next";
 import Image from "next/image";
 import { useMemo, useState } from "react";
 import { ProjectCard } from "@/components/ProjectCard";
 
 const carouselImages = [
   {
-    src: "/project-1.jpg",
-    alt: "Cabine d'ascenseur moderne",
-    label: "Ascenseurs",
+    src: "/image_1_1_top_left.png",
+    alt: "Villa moderne en façade",
+    label: "Villa premium",
   },
   {
-    src: "/project-2.jpg",
-    alt: "Portes d'ascenseur en hall",
-    label: "Accès vertical",
+    src: "/image_1_2_top_right.png",
+    alt: "Projet architectural résidentiel",
+    label: "Résidentiel",
   },
   {
-    src: "/project-3.jpg",
-    alt: "Villa contemporaine blanche",
-    label: "Villa résidentielle",
+    src: "/image_1_3_bottom_left.png",
+    alt: "Installation technique bâtiment",
+    label: "Ingénierie",
   },
   {
-    src: "/project-4.jpg",
-    alt: "Maison haut standing",
-    label: "Projet premium",
+    src: "/image_1_4_bottom_right.png",
+    alt: "Exécution chantier",
+    label: "Modernisation",
+  },
+  {
+    src: "/image_2_1_top_left.png",
+    alt: "Suivi opérationnel projet",
+    label: "Pilotage",
+  },
+  {
+    src: "/image_2_2_top_right.png",
+    alt: "Conception et audit",
+    label: "Audit",
+  },
+  {
+    src: "/image_2_3_bottom_left.png",
+    alt: "Coordination maîtrise d'oeuvre",
+    label: "Maîtrise d'oeuvre",
+  },
+  {
+    src: "/image_2_4_bottom_right.png",
+    alt: "Livraison de projet",
+    label: "Livraison",
   },
 ];
 
 const projectThumbnails = [
-  { src: "/project-4.jpg", alt: "Façade villa moderne" },
-  { src: "/project-1.jpg", alt: "Ascenseurs hall propre" },
-  { src: "/project-2.jpg", alt: "Mécanisme vertical" },
-  { src: "/project-3.jpg", alt: "Zone ascenseurs urbaine" },
+  { src: "/image_1_1_top_left.png", alt: "Façade villa moderne" },
+  { src: "/image_1_2_top_right.png", alt: "Résidence haut standing" },
+  { src: "/image_2_1_top_left.png", alt: "Vue projet technique" },
+  { src: "/image_2_2_top_right.png", alt: "Zone ingénierie verticale" },
 ];
 
 export default function RealisationsPage() {
@@ -104,7 +123,7 @@ export default function RealisationsPage() {
 
       <div className="mt-8">
         <ProjectCard
-          image="/project-4.jpg"
+          image="/image_1_1_top_left.png"
           title="PROJET: VILLA SOPHIA"
           bullets={["Audit ascenseurs privatifs", "Optimisation des flux occupants", "Modernisation et conformité technique"]}
           tags={["RÉSIDENTIEL", "TERTIAIRE", "MODERNISATION"]}
